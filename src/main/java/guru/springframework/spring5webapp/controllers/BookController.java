@@ -19,6 +19,6 @@ public class BookController {
         // fill model with data which gets passed to view
         model.addAttribute("books", bookRepository.findAll());
 
-        return "books";
+        return "books/list";
     }
 }
