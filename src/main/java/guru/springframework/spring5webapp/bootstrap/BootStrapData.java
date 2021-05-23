@@ -46,10 +46,17 @@ public class BootStrapData implements CommandLineRunner {
         publisher.setCity("petersburg");
         publisher.setState("FL");
         publisher.setZip("21345");
+        publisher.getBooks().add(ddd);
+        publisher.getBooks().add(noEJB);
+
+        ddd.setPublisher(publisher);
+        noEJB.setPublisher(publisher);
+
         publisherRepository.save(publisher);
 
         System.out.println("Started in Bootstrap");
         System.out.println("Number of Books: " + bookRepository.count());
         System.out.println("Number of publishers: " + publisherRepository.count());
+        System.out.println("number of books by publisher: " + publisher.getBooks().size());
     }
 }
